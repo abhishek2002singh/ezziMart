@@ -3,6 +3,9 @@ const app = express();
 const dataConnection = require('./src/config/database');
 
 const cookiesParser = require('cookie-parser')
+const dotenv = require('dotenv');
+
+const port = process.env.PORT || 7000
 
 const cors = require('cors');
 const corsOptions ={
@@ -27,7 +30,7 @@ app.use('/' ,profileRouter)
 
 dataConnection()
     .then(() => {
-        app.listen(7000, () => {
+        app.listen(port, () => {
             console.log("App running on port 7000");
         });
     })
