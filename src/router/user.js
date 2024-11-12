@@ -1,7 +1,8 @@
 const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
+
 const user = require('../models/user');
 
 // User signup route
